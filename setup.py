@@ -265,6 +265,7 @@ def get_vllm_version() -> str:
             rocm_version_str = hipcc_version.replace(".", "")[:3]
             version += f"+rocm{rocm_version_str}"
     else:
+        nvcc_cuda_version = get_nvcc_cuda_version(CUDA_HOME)    
         cuda_version = str(nvcc_cuda_version)
         if cuda_version != MAIN_CUDA_VERSION:
             cuda_version_str = cuda_version.replace(".", "")[:3]
