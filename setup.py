@@ -273,9 +273,9 @@ def get_vllm_version() -> str:
     else:
         nvcc_cuda_version = get_nvcc_cuda_version(CUDA_HOME)    
         cuda_version = str(nvcc_cuda_version)
-        if cuda_version != MAIN_CUDA_VERSION:
-            cuda_version_str = cuda_version.replace(".", "")[:3]
-            version += f"+cu{cuda_version_str}"
+        # if cuda_version != MAIN_CUDA_VERSION:
+        cuda_version_str = cuda_version.replace(".", "")[:3]
+        version += f"+cu{cuda_version_str}"
 
     return version
 
