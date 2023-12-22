@@ -14,7 +14,7 @@ if torch.version.cuda:
     cuda_version = torch.version.cuda
     print("Current CUDA version:", cuda_version)
     CUDA_HOME = CUDA_HOME.replace("11.7","12.1")
-    print()
+    print(CUDA_HOME)
 ROOT_DIR = os.path.dirname(__file__)
 
 MAIN_CUDA_VERSION = "12.1"
@@ -275,7 +275,7 @@ def get_vllm_version() -> str:
         cuda_version = str(nvcc_cuda_version)
         # if cuda_version != MAIN_CUDA_VERSION:
         cuda_version_str = cuda_version.replace(".", "")[:3]
-        version += f"+cu{cuda_version_str}"
+    version += f"+cu{cuda_version_str}"
 
     return version
 
