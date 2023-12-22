@@ -13,7 +13,7 @@ from torch.utils.cpp_extension import BuildExtension, CUDAExtension, CUDA_HOME, 
 if torch.version.cuda:
     cuda_version = torch.version.cuda
     print("Current CUDA version:", cuda_version)
-    CUDA_HOME.replace("11.7","12.1")
+    CUDA_HOME = CUDA_HOME.replace("11.7","12.1")
     print()
 ROOT_DIR = os.path.dirname(__file__)
 
